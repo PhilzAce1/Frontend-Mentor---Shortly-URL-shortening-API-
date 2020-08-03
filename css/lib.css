@@ -1,0 +1,19 @@
+.flex {
+  display: flex;
+}
+.btn {
+  border: 0;
+  outline: 0;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+.btn_norm {
+  background-color: transparent;
+}
+.btn_primary {
+  color: white;
+  background-color: var(--primary-color);
+}
+.btn:active {
+  background-color: gray;
+}

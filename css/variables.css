@@ -1,0 +1,9 @@
+:root {
+  --primary-color: hsl(180, 66%, 49%);
+  --secondary-color: hsl(257, 27%, 26%);
+  --gray: hsl(0, 0%, 75%);
+  --grayishviolet: hsl(257, 7%, 63%);
+  --dark-blue: hsl(255, 11%, 22%);
+  --dark-violet: hsl(260, 8%, 14%);
+  --red: hsl(0, 87%, 67%);
+}
