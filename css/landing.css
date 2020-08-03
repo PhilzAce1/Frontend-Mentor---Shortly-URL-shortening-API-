@@ -68,16 +68,29 @@ body > header .cta {
   width: 100%;
   text-align: center;
 }
-
+#landing p {
+  margin-bottom: 20px;
+}
 @media (min-width: 450px) {
   body > header nav {
     display: inline-block;
   }
+  #landing #hero {
+    overflow: hidden;
+    width: 45%;
+  }
+  #landing #hero img {
+    height: auto;
+    max-width: 100%;
+  }
   #landing > div {
     flex-flow: row nowrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   #landing article {
+    width: 30%;
+    text-align: start;
+    margin-left: 10%;
   }
 }
