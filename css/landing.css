@@ -24,6 +24,51 @@ body > header nav {
   display: none;
   width: 80%;
 }
+
+body > nav {
+  position: absolute;
+  width: 80%;
+  height: 67vh;
+  top: 10%;
+  background: var(--secondary-color);
+  left: 50%;
+  color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  transform: translateX(-50%);
+  padding: 10%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 black;
+}
+body > nav ul {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  height: 40%;
+  justify-content: space-around;
+  width: 100%;
+}
+hr {
+  margin-top: 30px;
+  width: 96%;
+  /* height: 10px; */
+  border: 1px solid hsl(257, 21%, 43%);
+  background-color: hsl(257, 27%, 26%);
+}
+body > nav ul:first-of-type {
+  height: 50%;
+  justify-content: space-around;
+}
+
+body > nav button {
+  color: white;
+  width: 95%;
+}
+body > nav li {
+  font-size: 1.5em;
+  color: white;
+}
 body > header div nav ul {
   display: flex;
   flex-flow: row nowrap;
@@ -38,10 +83,23 @@ body > header .cta {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-around;
+  display: none;
+}
+#close {
+  display: none;
+}
+.nav_control {
+  display: inline-block;
+}
+.nav_control button {
+  height: 20px;
+  width: 20px;
+  margin-right: 30px;
 }
 
 #landing {
-  height: 100vh;
+  height: 130vh;
+  padding-bottom: 70px;
   width: 100vw;
   display: flex;
   flex-flow: column nowrap;
@@ -75,6 +133,12 @@ body > header .cta {
   body > header nav {
     display: inline-block;
   }
+  body > header .cta {
+    display: flex;
+  }
+  #landing {
+    height: 100vh;
+  }
   #landing #hero {
     overflow: hidden;
     width: 45%;
@@ -92,5 +156,14 @@ body > header .cta {
     width: 30%;
     text-align: start;
     margin-left: 10%;
+  }
+  .nav_control {
+    display: none;
+  }
+
+  body > nav {
+    position: absolute;
+
+    display: none;
   }
 }

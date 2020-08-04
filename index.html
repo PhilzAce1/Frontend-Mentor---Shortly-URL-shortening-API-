@@ -27,6 +27,26 @@
     </style>
   </head>
   <body>
+    <nav>
+      <ul>
+        <li>Features</li>
+        <li>Pricing</li>
+        <li>Resources</li>
+      </ul>
+      <hr />
+      <ul>
+        <li>
+          <button class="btn btn_norm">
+            Login
+          </button>
+        </li>
+        <!-- <li > -->
+        <button class="btn btn_primary">
+          Sign In
+        </button>
+        <!-- </li> -->
+      </ul>
+    </nav>
     <header>
       <div id="logo">
         <img src="./images/logo.svg" alt="Logo image" />
@@ -45,6 +65,9 @@
         <button class="btn btn_primary">
           Sign In
         </button>
+      </div>
+      <div class="nav_control">
+        <button id="open"></button><button id="close"></button>
       </div>
     </header>
 
@@ -85,7 +108,7 @@
           </header>
           <div>
             <ul>
-              <li class="card">
+              <li class="card" id="first">
                 <img
                   src="./images/icon-brand-recognition.svg"
                   alt="desc image"
@@ -127,9 +150,9 @@
       <footer>
         <div class="top">
           <div>
-            <h1>
+            <h2>
               Boost your links today
-            </h1>
+            </h2>
             <button class="btn btn_primary btn_medium">
               Get Started
             </button>
@@ -137,7 +160,9 @@
         </div>
 
         <section>
-          <div></div>
+          <div>
+            <img src="./images/logo.svg" alt="Logo" />
+          </div>
           <div class="links">
             <ul>
               <li>Features</li>
@@ -159,7 +184,12 @@
               <li>Contact</li>
             </ul>
           </div>
-          <div></div>
+          <div class="socials">
+            <img src="images/icon-facebook.svg" alt="" />
+            <img src="images/icon-twitter.svg" alt="" />
+            <img src="images/icon-instagram.svg" alt="" />
+            <img src="images/icon-pinterest.svg" alt="" />
+          </div>
         </section>
       </footer>
     </main>
