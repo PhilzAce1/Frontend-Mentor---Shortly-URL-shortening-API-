@@ -63,7 +63,12 @@ body > nav ul:first-of-type {
 
 body > nav button {
   color: white;
+  height: 50px;
   width: 95%;
+  /* font-size: 1.1em; */
+}
+body > nav button.btn_primary {
+  font-size: 1.4em;
 }
 body > nav li {
   font-size: 1.5em;
