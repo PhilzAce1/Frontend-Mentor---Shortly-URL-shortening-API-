@@ -13,6 +13,7 @@ html {
 body {
   margin: 0;
   /* font-family: var(--primary-font); */
+  font-family: 'Poppins', sans-serif;
 }
 
 /**
@@ -53,7 +54,7 @@ hr {
        */
 
 pre {
-  font-family: monospace, monospace; /* 1 */
+  font-family: 'Poppins', sans-serif;
   font-size: 1em; /* 2 */
 }
 

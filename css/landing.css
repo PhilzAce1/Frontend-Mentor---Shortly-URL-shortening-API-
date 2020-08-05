@@ -40,6 +40,8 @@ body > nav {
   padding: 10%;
   border-radius: 10px;
   box-shadow: 0 0 10px 0 black;
+  display: none;
+  transition: ease 2s;
 }
 body > nav ul {
   display: flex;
@@ -95,11 +97,17 @@ body > header .cta {
 }
 .nav_control {
   display: inline-block;
+  position: fixed;
+  right: 0;
 }
 .nav_control button {
-  height: 20px;
-  width: 20px;
+  /* height: 20px; */
+  /* width: 20px; */
   margin-right: 30px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 2em;
 }
 
 #landing {
