@@ -109,6 +109,11 @@ body > header .cta {
   outline: none;
   font-size: 2em;
 }
+.cta button {
+  font-size: 0.8em;
+  width: auto;
+  padding: 13px 18px;
+}
 
 #landing {
   height: 130vh;
