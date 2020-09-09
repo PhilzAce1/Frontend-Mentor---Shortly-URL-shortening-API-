@@ -6,13 +6,13 @@ function onLoad() {
     makeApiCall(link.l);
   }
 }
+function onerror() {
+  window.location.pathname = '/404.html';
+}
+function onSuccess(link) {
+  window.location = link;
+}
 function makeApiCall(param) {
-  function onerror() {
-    window.location.pathname = '/404.html';
-  }
-  function onSuccess(link) {
-    window.location = link;
-  }
   function onReq(param) {
     if (param.success) {
       return onSuccess(param.payload);

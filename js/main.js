@@ -2,6 +2,22 @@ const mobileNav = document.querySelector('body > nav');
 const openBtn = document.querySelector('#open');
 const closeBtn = document.querySelector('#close');
 const form = document.querySelector('form');
+
+function onUpdateDom() {
+  document.querySelector('.result button').addEventListener('click', (e) => {
+    const refLink = e.target.parentElement.querySelector('a').href;
+    copy(refLink);
+  });
+}
+function copy(text) {
+  var input = document.createElement('input');
+  input.setAttribute('value', text);
+  document.body.appendChild(input);
+  input.select();
+  var result = document.execCommand('copy');
+  document.body.removeChild(input);
+  return result;
+}
 window.onload = function () {
   const lsK = Object.keys(localStorage);
   const links = [];
@@ -13,6 +29,7 @@ window.onload = function () {
       shortUrl: item.shortUrl,
     });
   });
+  // return;
   const linkData = links.map((x) => {
     return `
     <li>
@@ -23,7 +40,8 @@ window.onload = function () {
       </div>
    </li>`;
   });
-  document.querySelector('div.result').innerHTML = linkData.join(',');
+  document.querySelector('div.result ul').innerHTML = linkData.join(',');
+  onUpdateDom();
 };
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -46,6 +64,7 @@ form.addEventListener('submit', (e) => {
 });
 function onSuccess(param) {
   if (param.success) {
+    document.querySelector('form input').value = '';
     if (!localStorage.getItem(`${param.payload.urlCode}`)) {
       localStorage[param.payload.urlCode] = JSON.stringify(param.payload);
     }
