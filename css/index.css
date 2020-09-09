@@ -18,3 +18,53 @@ html {
   /* min-height: 0; */
   width: 100vw;
 }
+
+.result {
+  /* display: none; */
+  padding: 20;
+  max-height: 300px;
+  overflow: auto;
+}
+.result ul {
+  width: 100%;
+}
+.result li {
+  list-style: none;
+  height: 90px;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: white;
+  margin: 10px 0;
+}
+.result button {
+  padding: 10px 0px;
+  text-align: center;
+  outline: none;
+}
+@media (max-width: 450px) {
+  .result button {
+  }
+}
+@media (min-width: 450px) {
+  .result button {
+    padding-right: 20px;
+    padding-left: 10px;
+    width: 60px !important;
+  }
+  .result li {
+    height: 50px;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+form p.error {
+  position: absolute;
+  color: red;
+  top: 20%;
+  margin-top: 50px;
+}

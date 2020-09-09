@@ -1,5 +1,33 @@
-console.clear();
 const testUrl = '?l';
+window.onload = onLoad;
+function onLoad() {
+  const { isLink, link } = isShortLink(location.search);
+  if (isLink) {
+    makeApiCall(link.l);
+  }
+}
+function makeApiCall(param) {
+  function onerror() {
+    window.location.pathname = '/404.html';
+  }
+  function onSuccess(link) {
+    window.location = link;
+  }
+  function onReq(param) {
+    if (param.success) {
+      return onSuccess(param.payload);
+    } else return onerror();
+  }
+  console.log('heloow');
+  // AkRNl6y_9
+  const url = 'http://localhost:5000/' + param;
+  console.log();
+  fetch(url)
+    .then((res) => res.json())
+    .then(onReq)
+    .catch((ex) => console.log(ex));
+}
+
 function isShortLink(param) {
   const isLink = param
     .replace('?', '')
@@ -15,19 +43,4 @@ function isShortLink(param) {
     isLink: isLink.hasOwnProperty('l'),
     link: isLink,
   };
-}
-
-console.log(isShortLink(testUrl));
-function onLoad() {
-  const { isLink, link } = isShortLink(location.search);
-  if (isLink) {
-    makeApiCall(link.l);
-  }
-}
-function makeApiCall(param) {
-  // AkRNl6y_9
-  const url = 'http://localhost:5000/' + param;
-  fetch(url)
-    .then((res) => console.log(res))
-    .catch((ex) => console.log(ex));
 }
