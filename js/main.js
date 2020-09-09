@@ -9,6 +9,19 @@ function onUpdateDom() {
     copy(refLink);
   });
 }
+
+function linkEl(data) {
+  return `
+  <li>
+    <p>${data.longUrl}</p>
+    <div>
+        <a href="${location.toString()}/?l=${data.urlCode}">${
+    location.origin
+  }/?l=${data.urlCode}</a>
+        <button>Copy</button>
+    </div>
+ </li>`;
+}
 function copy(text) {
   var input = document.createElement('input');
   input.setAttribute('value', text);
@@ -25,20 +38,14 @@ window.onload = function () {
     let item = localStorage[x];
     item = JSON.parse(item);
     links.push({
-      longLink: item.longUrl,
+      longUrl: item.longUrl,
       shortUrl: item.shortUrl,
+      urlCode: item.urlCode,
     });
   });
   // return;
   const linkData = links.map((x) => {
-    return `
-    <li>
-      <p>${x.longLink}</p>
-      <div>
-          <a href="${x.shortUrl}">${x.shortUrl}</a>
-          <button>Copy</button>
-      </div>
-   </li>`;
+    return linkEl(x);
   });
   document.querySelector('div.result ul').innerHTML = linkData.join(',');
   onUpdateDom();
@@ -64,10 +71,13 @@ form.addEventListener('submit', (e) => {
 });
 function onSuccess(param) {
   if (param.success) {
+    const resultEl = document.querySelector('.result ul');
+    const currentInner = resultEl.innerHTML;
     document.querySelector('form input').value = '';
     if (!localStorage.getItem(`${param.payload.urlCode}`)) {
       localStorage[param.payload.urlCode] = JSON.stringify(param.payload);
     }
+    resultEl.innerHTML = linkEl(param.payload) + currentInner;
   } else {
     document.querySelector('p.error').textContent = param.msg;
   }

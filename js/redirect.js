@@ -1,7 +1,8 @@
 const testUrl = '?l';
-window.onload = onLoad;
+onLoad();
 function onLoad() {
   const { isLink, link } = isShortLink(location.search);
+  console.log('heelow wol');
   if (isLink) {
     makeApiCall(link.l);
   }
@@ -18,7 +19,6 @@ function makeApiCall(param) {
       return onSuccess(param.payload);
     } else return onerror();
   }
-  console.log('heloow');
   // AkRNl6y_9
   const url = 'http://localhost:5000/' + param;
   console.log();
